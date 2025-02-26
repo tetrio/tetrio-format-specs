@@ -11,20 +11,29 @@
 ## File Layout
 | Section            | Description |
 |--------------------|-------------|
-| **Header**        | Contains the file signature `"TETRIO SOUND 1.0"`. |
+| **Header**        | Contains the file signature `"tRSD"` as well as the version info. |
 | **Sprite Definitions** | Array of Sprite Definition structs.  Must include at least one, and must include an ending with `0` name length. |
 | **Audio Header**  | Stores the total size of the audio data in bytes. |
 | **Audio Data**    | The raw audio content in a browser-compatible format. |
 ---
 ## Section Details
 
-### Header
+### Header Signature
 
 | Bytes (Hex)                                      | ASCII Representation |
 |--------------------------------------------------|----------------------|
-| `54 45 54 52 49 4F 20 53 4F 55 4E 44 20 31 2E 30` | `"TETRIO SOUND 1.0"` |
+| `72 54 53 44` | `"tRSD"` |
 
 This signature must be present at the beginning of the file.
+
+### Header Version Info
+
+| Type    | Name           | Description |
+|---------|----------------|-------------|
+| `uint32` | Version Major | The major version. Changes to this number are not backwards compatible to the game. |
+| `uint32` | Version Minor | The minor version. Changes to this number are backwards compatible inside the same major version. |
+
+Following the signature is this version info. The version of this spec is 1.0.
 
 ### Sprite Definition
 
