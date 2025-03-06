@@ -22,7 +22,7 @@
 
 | Bytes (Hex)                                      | ASCII Representation |
 |--------------------------------------------------|----------------------|
-| `72 54 53 44` | `"tRSD"` |
+| `74 52 53 44` | `"tRSD"` |
 
 This signature must be present at the beginning of the file.
 
